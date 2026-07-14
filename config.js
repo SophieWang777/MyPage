@@ -7,7 +7,7 @@ const USER_CONFIG = {
   name:       "Wang Yan",
   initials:   "Sophie Wang",
   role:       "Undergraduate",
-  university: "University of Electronic Science and Technology",
+  university: "University of Electronic Science and Technology of China",
   email:      "sophieeew777@gmail.com",
   bio:        "***",
   photo:      "",   // optional: path to your photo, e.g. "assets/photo.jpg"
@@ -59,7 +59,7 @@ const USER_CONFIG = {
   ],
 
   education: [
-    { period: "2023–present",    degree: "B.S. in Communication Engineering",  institution: "University of Electronic Science and Technology" },
+    { period: "2023–present",    degree: "B.S. in Communication Engineering",  institution: "University of Electronic Science and Technology of China" },
   ],
 
   experience: [
