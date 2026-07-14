@@ -4,19 +4,19 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 const USER_CONFIG = {
-  name:       "Your Name",
-  initials:   "YN",
-  role:       "PhD Candidate",
-  university: "Your University",
-  email:      "your.email@university.edu",
-  bio:        "Exploring the frontiers of your research area, machine learning, and artificial intelligence. Building intelligent systems that advance scientific discovery.",
+  name:       "Wang Yan",
+  initials:   "Sophie Wang",
+  role:       "Undergraduate",
+  university: "University of Electronic Science and Technology",
+  email:      "sophieeew777@gmail.com",
+  bio:        "***",
   photo:      "",   // optional: path to your photo, e.g. "assets/photo.jpg"
 
-  stats: [
+/* stats: [
     { value: "10+",  label: "Publications" },
     { value: "200+", label: "Citations" },
     { value: "5+",   label: "Projects" },
-  ],
+  ], */
 
   links: {
     scholar: "https://scholar.google.com/",
@@ -44,14 +44,14 @@ const USER_CONFIG = {
     },
   ],
 
-  projects: [
+  /* projects: [
     {
       name: "Project Name",
       desc: "Brief description of your project and its impact.",
       tags: ["Python", "PyTorch"],
       url:  "#",
     },
-  ],
+  ], */
 
   news: [
     { date: "2025.01", badge: "New",   text: "Paper accepted at Conference 2025!" },
@@ -59,8 +59,7 @@ const USER_CONFIG = {
   ],
 
   education: [
-    { period: "2020–Present", degree: "Ph.D. in Computer Science", institution: "Your University" },
-    { period: "2016–2020",    degree: "B.S. in Computer Science",  institution: "Your University" },
+    { period: "2023–present",    degree: "B.S. in Communication Engineering",  institution: "University of Electronic Science and Technology" },
   ],
 
   experience: [
