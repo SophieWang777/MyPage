@@ -77,6 +77,7 @@ stats: [
     { period: "2025.05.20",      role: "Event Service Volunteer",       institution: "2025 Meet Melbourne in China, Chengdu Stop (University of Melbourne)" },
     { period: "2023.09–2024.06", role: "External Relations Department", institution: "Student Union, Glasgow College" },
   ],
+  };
  
   
   
