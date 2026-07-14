@@ -746,8 +746,16 @@ a:hover {
 
 .contact-content {
     text-align: center;
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
+}
+
+.contact-content p:first-child {
+    margin-top: 2rem;
+}
+
+.contact-content p:last-child {
+    margin-bottom: 2rem;
 }
 
 .contact-intro {
