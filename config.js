@@ -38,16 +38,12 @@ stats: [
   ], */
 
   news: [
-    { date: "2025.01", badge: "New",   text: "Paper accepted at Conference 2025!" },
-    { date: "2024.09", badge: "Award", text: "Received fellowship / award." },
+    { date: "2026.04",    badge: "News",  text: "Selected as iSURE Intern, Center for Research Computing, University of Notre Dame" },
+    { date: "2025.09", badge: "News",  text: "Selected as GTA (Glasgow Teaching Assistant) for Introductory Programming (UESTC1005)" },
+    { date: "2025.06",    badge: "Award", text: "Excellence Award for Short-Term Academic Exchange, Glasgow College, UESTC" },
+    { date: "2024.10",    badge: "Award", text: "Outstanding Student Scholarship, Glasgow College, UESTC" },
   ],
-  
-  education: [
-    { period: "2023–present",    degree: "B.S. in Communication Engineering",  institution: "University of Electronic Science and Technology of China" },
-  ],
-  
-  
-  
+
   publications: [
     {
       year:     2025,
@@ -67,9 +63,23 @@ stats: [
     },
   ],  
   
-  experience: [
-    { period: "Summer 2024", role: "Research Intern", institution: "Research Lab / Company" },
+  internships: [
+    { period: "2026.07–present", role: "Undergraduate Researcher, Voice4PIMD", institution: "Center for Research Computing, University of Notre Dame" },
   ],
-};
+
+  education: [
+    { period: "2023.09–present", degree: "B.S. in Communication Engineering", institution: "Glasgow College, University of Glasgow | UESTC" },
+    { period: "2025.02",         degree: "Study Exchange",                    institution: "Department of Computer Science and Technology, Cambridge University" },
+  ],
+
+  services: [
+    { period: "2023.09–2025.06", role: "Secretariat Minister",          institution: "Student Association Union, UESTC" },
+    { period: "2025.05.20",      role: "Event Service Volunteer",       institution: "2025 Meet Melbourne in China, Chengdu Stop (University of Melbourne)" },
+    { period: "2023.09–2024.06", role: "External Relations Department", institution: "Student Union, Glasgow College" },
+  ],
+ 
+  
+  
+  
 
   
