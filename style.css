@@ -134,7 +134,7 @@ a:hover {
     align-items: center;
     justify-content: space-between;
     padding: var(--space-md) var(--space-xl);
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -160,7 +160,7 @@ a:hover {
 
 .nav-links {
     display: flex;
-    gap: var(--space-xl);
+    gap: var(--space-lg);
 }
 
 .nav-links a {
@@ -407,7 +407,7 @@ a:hover {
    ======================================== */
 
 .section {
-    padding: var(--space-3xl) var(--space-xl);
+    padding: 48px var(--space-xl);
 }
 
 .section-alt {
