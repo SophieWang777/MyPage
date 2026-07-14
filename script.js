@@ -106,6 +106,11 @@ function populateLists(cfg) {
     educationList.innerHTML = renderTimeline(cfg.education, 'degree', 'institution');
   }
 
+  const teachingList = document.getElementById('cfg-teaching');
+  if (teachingList && cfg.teaching?.length) {
+    teachingList.innerHTML = renderTimeline(cfg.teaching, 'role', 'institution');
+  }
+    
   const servicesList = document.getElementById('cfg-services');
   if (servicesList && cfg.services?.length) {
     servicesList.innerHTML = renderTimeline(cfg.services, 'role', 'institution');
