@@ -2,7 +2,6 @@
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
 
-// Load saved theme
 const savedTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', savedTheme);
 updateThemeLabel();
@@ -24,7 +23,6 @@ if (themeToggle) {
     });
 }
 
-// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -35,10 +33,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Prevent placeholder href="#" links from scrolling to top
 document.querySelectorAll('a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
 
-// ── Config Population ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof USER_CONFIG === 'undefined') return;
   populateSimpleFields(USER_CONFIG);
@@ -63,6 +59,14 @@ function boldName(authors, name) {
   return authors.replace(name, `<strong>${name}</strong>`);
 }
 
+function renderTimeline(items, mainField, subField) {
+  return items.map(e => `
+    <div class="exp-item">
+      <div class="exp-period">${e.period}</div>
+      <div class="exp-details"><h4>${e[mainField]}</h4><p>${e[subField]}</p></div>
+    </div>`).join('');
+}
+
 function populateLists(cfg) {
   const pubList = document.getElementById('cfg-publications');
   if (pubList && cfg.publications?.length) {
@@ -79,15 +83,7 @@ function populateLists(cfg) {
         </div>
       </article>`).join('');
   }
-  const projGrid = document.getElementById('cfg-projects');
-  if (projGrid && cfg.projects?.length) {
-    projGrid.innerHTML = cfg.projects.map(p => `
-      <article class="project-card">
-        <h3 class="project-title">${p.name}</h3>
-        <p class="project-desc">${p.desc}</p>
-        <div class="project-tags">${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-      </article>`).join('');
-  }
+
   const newsList = document.getElementById('cfg-news');
   if (newsList && cfg.news?.length) {
     newsList.innerHTML = cfg.news.map(n => `
@@ -100,18 +96,18 @@ function populateLists(cfg) {
       </div>`).join('');
   }
 
-  function renderExpList(containerId, items, mainField, subField) {
-    const el = document.getElementById(containerId);
-    if (el && items && items.length) {
-      el.innerHTML = items.map(e => `
-        <div class="exp-item">
-          <div class="exp-period">${e.period}</div>
-          <div class="exp-details"><h4>${e[mainField]}</h4><p>${e[subField]}</p></div>
-        </div>`).join('');
-    }
+  const internshipsList = document.getElementById('cfg-internships');
+  if (internshipsList && cfg.internships?.length) {
+    internshipsList.innerHTML = renderTimeline(cfg.internships, 'role', 'institution');
   }
-  renderExpList('cfg-internships', cfg.internships, 'role', 'institution');
-  renderExpList('cfg-education', cfg.education, 'degree', 'institution');
-  renderExpList('cfg-services', cfg.services, 'role', 'institution');
-   
+
+  const educationList = document.getElementById('cfg-education');
+  if (educationList && cfg.education?.length) {
+    educationList.innerHTML = renderTimeline(cfg.education, 'degree', 'institution');
+  }
+
+  const servicesList = document.getElementById('cfg-services');
+  if (servicesList && cfg.services?.length) {
+    servicesList.innerHTML = renderTimeline(cfg.services, 'role', 'institution');
+  }
 }
