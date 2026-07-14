@@ -99,12 +99,25 @@ function populateLists(cfg) {
         </div>
       </div>`).join('');
   }
+    
   const expGrid = document.getElementById('cfg-experience');
   if (expGrid) {
-    const edu = cfg.education||[], exp = cfg.experience||[];
+    const categories = [
+      { key: 'internships', title: 'Internships', mainField: 'role',   subField: 'institution' },
+      { key: 'education',   title: 'Education',    mainField: 'degree', subField: 'institution' },
+      { key: 'services',    title: 'Services',     mainField: 'role',   subField: 'institution' },
+    ];
     let html = '';
-    if (edu.length) html += `<div class="exp-category"><h3>Education</h3>${edu.map(e=>`<div class="exp-item"><div class="exp-period">${e.period}</div><div class="exp-details"><h4>${e.degree}</h4><p>${e.institution}</p></div></div>`).join('')}</div>`;
-    if (exp.length) html += `<div class="exp-category"><h3>Experience</h3>${exp.map(e=>`<div class="exp-item"><div class="exp-period">${e.period}</div><div class="exp-details"><h4>${e.role}</h4><p>${e.institution}</p></div></div>`).join('')}</div>`;
+    categories.forEach(cat => {
+      const items = cfg[cat.key] || [];
+      if (items.length) {
+        html += `<div class="exp-category"><h3>${cat.title}</h3>${items.map(e => `
+          <div class="exp-item">
+            <div class="exp-period">${e.period}</div>
+            <div class="exp-details"><h4>${e[cat.mainField]}</h4><p>${e[cat.subField]}</p></div>
+          </div>`).join('')}</div>`;
+      }
+    });
     if (html) expGrid.innerHTML = html;
-  }
+}
 }
