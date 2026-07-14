@@ -245,7 +245,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 140px var(--space-xl) var(--space-3xl);
+    padding: 100px var(--space-xl) var(--space-lg);
     position: relative;
 }
 
