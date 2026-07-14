@@ -4,6 +4,11 @@
    like Nature/Science journal typography
    ======================================== */
 
+.exp-list {
+    display: flex;
+    flex-direction: column;
+}
+
 :root {
     /* Light Theme - Classic Print */
     --bg-primary: #fdfcfa;
