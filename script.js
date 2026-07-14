@@ -94,7 +94,7 @@ function populateLists(cfg) {
       <div class="news-item">
         <span class="news-date">${n.date}</span>
         <div class="news-content">
-          <span class="news-badge">${n.badge}</span>
+          <span class="news-badge" data-type="${n.badge.toLowerCase()}">${n.badge}</span>
           <span class="news-text">${n.text}</span>
         </div>
       </div>`).join('');
