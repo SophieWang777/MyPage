@@ -240,12 +240,12 @@ a:hover {
    ======================================== */
 
 .hero {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px var(--space-xl) var(--space-2xl);
+    padding: 140px var(--space-xl) var(--space-3xl);
     position: relative;
 }
 
