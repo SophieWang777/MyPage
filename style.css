@@ -750,12 +750,12 @@ a:hover {
     margin: 0 auto;
 }
 
-.contact-content p:first-child {
-    margin-top: 2rem;
+..contact-content p {
+    margin-bottom: 1.5em;
 }
 
 .contact-content p:last-child {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .contact-intro {
