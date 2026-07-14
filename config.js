@@ -12,11 +12,13 @@ const USER_CONFIG = {
   bio:        "***",
   photo:      "",   // optional: path to your photo, e.g. "assets/photo.jpg"
 
-/* stats: [
+/* 
+stats: [
     { value: "10+",  label: "Publications" },
     { value: "200+", label: "Citations" },
     { value: "5+",   label: "Projects" },
-  ], */
+  ], 
+*/
 
   links: {
     scholar: "https://scholar.google.com/",
@@ -25,6 +27,27 @@ const USER_CONFIG = {
     cv:      "assets/cv.pdf",
   },
 
+
+  /* projects: [
+    {
+      name: "Project Name",
+      desc: "Brief description of your project and its impact.",
+      tags: ["Python", "PyTorch"],
+      url:  "#",
+    },
+  ], */
+
+  news: [
+    { date: "2025.01", badge: "New",   text: "Paper accepted at Conference 2025!" },
+    { date: "2024.09", badge: "Award", text: "Received fellowship / award." },
+  ],
+  
+  education: [
+    { period: "2023–present",    degree: "B.S. in Communication Engineering",  institution: "University of Electronic Science and Technology of China" },
+  ],
+  
+  
+  
   publications: [
     {
       year:     2025,
@@ -42,27 +65,11 @@ const USER_CONFIG = {
       links:    { pdf: "#" },
       abstract: "",
     },
-  ],
-
-  /* projects: [
-    {
-      name: "Project Name",
-      desc: "Brief description of your project and its impact.",
-      tags: ["Python", "PyTorch"],
-      url:  "#",
-    },
-  ], */
-
-  news: [
-    { date: "2025.01", badge: "New",   text: "Paper accepted at Conference 2025!" },
-    { date: "2024.09", badge: "Award", text: "Received fellowship / award." },
-  ],
-
-  education: [
-    { period: "2023–present",    degree: "B.S. in Communication Engineering",  institution: "University of Electronic Science and Technology of China" },
-  ],
-
+  ],  
+  
   experience: [
     { period: "Summer 2024", role: "Research Intern", institution: "Research Lab / Company" },
   ],
 };
+
+  
