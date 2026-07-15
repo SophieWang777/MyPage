@@ -427,6 +427,7 @@ a:hover {
     color: var(--text-primary);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-sm);
 }
 
@@ -629,6 +630,16 @@ a:hover {
    News - Timeline
    ======================================== */
 
+#news .news-list {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-sm) var(--space-lg);
+}
+
 .news-timeline {
     display: flex;
     flex-direction: column;
@@ -636,10 +647,9 @@ a:hover {
 }
 
 .news-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: var(--space-md);
-    padding: var(--space-md) 0;
+    position: relative;
+    text-align: center;
+    padding: var(--space-md) 140px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -648,6 +658,9 @@ a:hover {
 }
 
 .news-date {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -657,6 +670,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    justify-content: center;
     gap: var(--space-sm);
     flex-wrap: wrap;
 }
@@ -685,8 +699,40 @@ a:hover {
     font-size: 0.9rem;
 }
 
+.news-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--border-color);
+}
+
+.news-link:hover {
+    color: var(--accent-primary);
+    text-decoration-color: var(--accent-primary);
+}
+
+.news-people {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: 4px;
+    font-size: 0.75rem;
+}
+
+.news-people-link {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.news-people-link:hover {
+    color: var(--accent-primary);
+}
+
 /* ========================================
-   Experience - Two Column
+   Experience - Timeline Items
    ======================================== */
 
 .experience-grid {
@@ -706,7 +752,9 @@ a:hover {
 }
 
 .exp-item {
-    padding: var(--space-md) 0;
+    position: relative;
+    text-align: center;
+    padding: var(--space-md) 140px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -715,10 +763,12 @@ a:hover {
 }
 
 .exp-period {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-muted);
-    margin-bottom: var(--space-xs);
 }
 
 .exp-title {
@@ -738,6 +788,65 @@ a:hover {
     font-size: 0.85rem;
     color: var(--text-muted);
     font-style: italic;
+}
+
+.exp-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--border-color);
+}
+
+.exp-link:hover {
+    color: var(--accent-primary);
+    text-decoration-color: var(--accent-primary);
+}
+
+.exp-people {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+    font-size: 0.75rem;
+}
+
+.exp-people-link {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.exp-people-link:hover {
+    color: var(--accent-primary);
+}
+
+/* ---- Internships / Education / Teaching: individual small cards ---- */
+#internships .exp-item,
+#education .exp-item,
+#teaching .exp-item {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: var(--space-lg);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+}
+
+#internships .exp-item:last-child,
+#education .exp-item:last-child,
+#teaching .exp-item:last-child {
+    margin-bottom: 0;
+}
+
+/* ---- Services: one unified big card ---- */
+#services .exp-list {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-sm) var(--space-lg);
 }
 
 /* ========================================
@@ -894,10 +1003,6 @@ a:hover {
         grid-template-columns: 1fr;
     }
 
-    .news-item {
-        grid-template-columns: 1fr;
-    }
-
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -905,6 +1010,19 @@ a:hover {
     .contact-links {
         flex-direction: column;
         align-items: center;
+    }
+
+    .exp-item,
+    .news-item {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    .exp-period,
+    .news-date {
+        position: static;
+        display: block;
+        text-align: center;
+        margin-bottom: var(--space-xs);
     }
 }
 
@@ -1131,7 +1249,8 @@ a:hover {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background: var(--accent-gradient);
@@ -1256,27 +1375,23 @@ a:hover {
 
 .exp-item:hover {
     background: var(--bg-secondary);
-    padding-left: var(--space-md);
 }
 
 /* ========================================
    Scroll-Triggered Animations
    ======================================== */
 
-/* 基础滚动动画类 - 初始状态 */
 .scroll-animate {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* 可见状态 */
 .scroll-animate.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Section 滚动动画 - 优雅淡入 */
 .section.scroll-animate {
     transform: translateY(30px);
 }
@@ -1285,7 +1400,6 @@ a:hover {
     transform: translateY(0);
 }
 
-/* 卡片滚动动画 - 从左侧滑入 */
 .pub-card.scroll-animate {
     opacity: 0;
     transform: translateX(-20px);
@@ -1297,7 +1411,6 @@ a:hover {
     transform: translateX(0);
 }
 
-/* 项目卡片 - 缩放淡入 */
 .project-card.scroll-animate {
     opacity: 0;
     transform: scale(0.95);
@@ -1309,7 +1422,6 @@ a:hover {
     transform: scale(1);
 }
 
-/* 新闻项 - 从右侧滑入 */
 .news-item.scroll-animate {
     opacity: 0;
     transform: translateX(20px);
@@ -1321,7 +1433,6 @@ a:hover {
     transform: translateX(0);
 }
 
-/* 经验项滚动动画 */
 .exp-item.scroll-animate {
     opacity: 0;
     transform: translateY(15px);
@@ -1333,7 +1444,6 @@ a:hover {
     transform: translateY(0);
 }
 
-/* 联系项滚动动画 */
 .contact-item.scroll-animate {
     opacity: 0;
     transform: translateY(15px);
@@ -1345,7 +1455,6 @@ a:hover {
     transform: translateY(0);
 }
 
-/* Section 标题滚动动画 - 下划线展开 */
 .section-title.scroll-animate {
     opacity: 0;
     transform: translateY(10px);
@@ -1357,7 +1466,6 @@ a:hover {
     transform: translateY(0);
 }
 
-/* 筛选按钮滚动动画 */
 .filter-btn.scroll-animate {
     opacity: 0;
     transform: translateY(10px);
