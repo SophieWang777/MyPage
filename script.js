@@ -66,7 +66,7 @@ function renderTimeline(items, mainField, subField) {
       <div class="exp-details">
         <h4>${e.link ? `<a href="${e.link}" target="_blank" rel="noopener noreferrer" class="exp-link">${e[mainField]}</a>` : e[mainField]}</h4>
         <p>${e[subField]}</p>
-        ${e.people?.length ? `<div class="exp-people">${e.people.map(p => `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="exp-people-link">${p.label}</a>`).join(' · ')}</div>` : ''}
+        ${e.people?.length ? `<div class="exp-people">${e.people.map(p => `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="exp-people-link">${p.label}</a>`).join(' | ')}</div>` : ''}
       </div>
     </div>`).join('');
 }
