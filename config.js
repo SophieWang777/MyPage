@@ -64,9 +64,18 @@ stats: [
   ],  
   
   internships: [
-    { period: "2026.07–present", role: "Undergraduate Researcher, Voice4PIMD", institution: "Center for Research Computing, University of Notre Dame" },
+      {
+        period: "2026.07–present",
+        role: "Undergraduate Researcher, Voice4PIMD",
+        institution: "Center for Research Computing, University of Notre Dame",
+        link: "https://voice4pimd.org/",
+        people: [
+          { label: "Faculty Advisor: Prof. Jarek Nabrzyski", url: "https://aegis.nd.edu/our-team/jaroslaw-nabrzyski/" },
+          { label: "Mentor: Evan Brinckman", url: "https://data-ai-computing.nd.edu/research/deployment-operations-modeling-and-engineering-dome/dome-people/" },
+        ],
+      },
   ],
-
+  
   teaching: [
     { period: "2025.09–2026.01", role: "Glasgow Teaching Assistant (GTA), Introductory Programming (UESTC1005)", institution: "Glasgow College, UESTC" },
   ],
