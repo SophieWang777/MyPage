@@ -10,7 +10,7 @@ const USER_CONFIG = {
   university: "University of Electronic Science and Technology of China",
   email:      "sophieeew777@gmail.com",
   bio:        "***",
-  photo:      "",   // optional: path to your photo, e.g. "assets/photo.jpg"
+  photo:      "assets/profile.JPG",   // optional: path to your photo, e.g. "assets/photo.jpg"
 
 /* 
 stats: [
