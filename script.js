@@ -63,7 +63,11 @@ function renderTimeline(items, mainField, subField) {
   return items.map(e => `
     <div class="exp-item">
       <div class="exp-period">${e.period}</div>
-      <div class="exp-details"><h4>${e[mainField]}</h4><p>${e[subField]}</p></div>
+      <div class="exp-details">
+        <h4>${e.link ? `<a href="${e.link}" target="_blank" rel="noopener noreferrer" class="exp-link">${e[mainField]}</a>` : e[mainField]}</h4>
+        <p>${e[subField]}</p>
+        ${e.people?.length ? `<div class="exp-people">${e.people.map(p => `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="exp-people-link">${p.label}</a>`).join(' · ')}</div>` : ''}
+      </div>
     </div>`).join('');
 }
 
@@ -110,7 +114,7 @@ function populateLists(cfg) {
   if (teachingList && cfg.teaching?.length) {
     teachingList.innerHTML = renderTimeline(cfg.teaching, 'role', 'institution');
   }
-    
+
   const servicesList = document.getElementById('cfg-services');
   if (servicesList && cfg.services?.length) {
     servicesList.innerHTML = renderTimeline(cfg.services, 'role', 'institution');
