@@ -1185,7 +1185,6 @@ a:hover {
 
 .news-item:hover {
     background: var(--bg-secondary);
-    padding-left: var(--space-md);
 }
 
 /* Button elegant hover */
