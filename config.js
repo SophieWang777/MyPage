@@ -77,8 +77,8 @@ stats: [
       },
   ],
   
-  teaching: [
-    { period: "2025.09–2026.01", role: "Glasgow Teaching Assistant (GTA), Introductory Programming (UESTC1005)", institution: "Glasgow College, UESTC" },
+teaching: [
+    { period: "2025.09–2026.01", role: "UESTC1005 | Introductory Programming", institution: "Glasgow College, UESTC" },
   ],
   
   education: [
