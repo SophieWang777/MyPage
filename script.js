@@ -45,6 +45,7 @@ function populateSimpleFields(cfg) {
   document.querySelectorAll('[data-config]').forEach(el => {
     const key = el.dataset.config;
     if (key === 'role_university') el.textContent = `${cfg.role} at ${cfg.university}`;
+    else if (key === 'bio' && cfg[key] !== undefined) el.innerHTML = cfg[key];
     else if (cfg[key] !== undefined) el.textContent = cfg[key];
   });
   if (cfg.name) document.title = `${cfg.name} | Academic Homepage`;
