@@ -300,8 +300,16 @@ a:hover {
 .hero-description {
     font-size: 1.05rem;
     color: var(--text-secondary);
-    line-height: 1.9;
+    line-height: 1.6;
     margin-bottom: var(--space-xl);
+}
+
+.hero-description p {
+    margin-bottom: 0.6em;
+}
+
+.hero-description p:last-child {
+    margin-bottom: 0;
 }
 
 .highlight {
