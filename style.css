@@ -710,6 +710,13 @@ a:hover {
     font-size: 0.9rem;
 }
 
+.news-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.9rem;
+    flex-basis: 100%;
+}
+
 .news-link {
     color: inherit;
     text-decoration: underline;
