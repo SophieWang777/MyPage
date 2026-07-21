@@ -9,7 +9,7 @@ const USER_CONFIG = {
   role:       "Undergraduate",
   university: "University of Electronic Science and Technology of China",
   email:      "sophieeew777@gmail.com",
-  bio:        "I am a third-year undergraduate in Communication Engineering. (Glasgow × UESTC) . My research interests lie at the intersection of machine learning and acoustic sensing. I'm particularly interested in AI for health, where lightweight sensing and on-device learning can extend care to people and places that clinical infrastructure does not easily reach.",
+  bio:        "I am a third-year undergraduate in Communication Engineering. (Glasgow × UESTC) . <br><br> My research interests lie at the intersection of machine learning and acoustic sensing. I'm particularly interested in AI for health, where lightweight sensing and on-device learning can extend care to people and places that clinical infrastructure does not easily reach.",
   photo:      "assets/profile.JPG",   // optional: path to your photo, e.g. "assets/photo.jpg"
 
 /* 
