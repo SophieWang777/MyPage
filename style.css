@@ -300,12 +300,12 @@ a:hover {
 .hero-description {
     font-size: 1.05rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 2.0;
     margin-bottom: var(--space-xl);
 }
 
 .hero-description p {
-    margin-bottom: 0.6em;
+    margin-bottom: 0.5em;
 }
 
 .hero-description p:last-child {
