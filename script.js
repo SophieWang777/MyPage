@@ -89,17 +89,17 @@ function populateLists(cfg) {
       </article>`).join('');
   }
 
-  const newsList = document.getElementById('cfg-news');
-  if (newsList && cfg.news?.length) {
+const newsList = document.getElementById('cfg-news');
+if (newsList && cfg.news?.length) {
     newsList.innerHTML = cfg.news.map(n => `
       <div class="news-item">
         <span class="news-date">${n.date}</span>
         <div class="news-content">
           <span class="news-badge" data-type="${n.badge.toLowerCase()}">${n.badge}</span>
-          <span class="news-text">${n.text}</span>
+          <div class="news-text">${n.text}</div>
         </div>
       </div>`).join('');
-  }
+}
 
   const internshipsList = document.getElementById('cfg-internships');
   if (internshipsList && cfg.internships?.length) {
