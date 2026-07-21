@@ -68,7 +68,7 @@ stats: [
       {
         period: "2026.07–present",
         role: "Undergraduate Researcher, Voice4PIMD",
-        institution: "CRC, url:"https://crc.nd.edu/", University of Notre Dame",
+        institution: "<a href=\"https://crc.nd.edu/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"exp-link\">CRC</a>, University of Notre Dame",
         link: "https://voice4pimd.org/",
         people: [
           { label: "Faculty Advisor: Prof. Jarek Nabrzyski", url: "https://aegis.nd.edu/our-team/jaroslaw-nabrzyski/" },
