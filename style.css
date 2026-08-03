@@ -229,11 +229,11 @@ a:hover {
 [data-theme="light"] .theme-label::after { content: "Dark"; }
 
 .theme-label {
-    font-size: 0;
+    display: none;
 }
 
 .theme-label::after {
-    font-size: 0.75rem;
+    display: none;
 }
 
 /* ========================================
