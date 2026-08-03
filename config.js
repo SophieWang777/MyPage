@@ -1,149 +1,95 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic homepage of Wang Yan — undergraduate researcher in AI and communication engineering.">
-    <meta property="og:title" content="Wang Yan | Academic Homepage">
-    <meta property="og:description" content="Undergraduate researcher in AI and communication engineering.">
-    <title>Wang Yan | Academic Homepage</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <a href="#about" class="skip-link">Skip to main content</a>
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <span class="logo-bracket">[</span>
-                <span class="logo-text" data-config="initials">YN</span>
-                <span class="logo-bracket">]</span>
-            </a>
-            <div class="nav-links">
-                <a href="#about">About Me</a>
-                <a href="#news">News</a>
-                <a href="#internships">Internships</a>
-                <a href="#teaching">Teaching</a>
-                <a href="#education">Education</a>
-                <a href="#services">Services</a>
-                <!-- <a href="#publications">Publications</a> -->
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="nav-controls">
-                <button type="button" class="nav-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <svg class="nav-btn-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"/>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                    </svg>
-                    <svg class="nav-btn-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                    </svg>
-                    <span class="nav-btn-label theme-label">Light</span>
-                </button>
-            </div>
-        </div>
-    </nav>
+// ─────────────────────────────────────────────────────────────────────────────
+// config.js — Edit this file to personalize your academic homepage.
+// No HTML/CSS knowledge required.
+// ─────────────────────────────────────────────────────────────────────────────
 
-    <section id="about" class="hero">
-        <div class="hero-bg">
-            <div class="grid-overlay"></div>
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <!--  <p class="hero-greeting">Hello, I'm</p> -->
-                <h1 class="hero-name" data-config="name">Your Name</h1>
-                <p class="hero-title" data-config="role_university">PhD Candidate at Your University</p>
-                <div class="hero-description" data-config="bio"></div>
-                <div class="hero-cta">
-                    <a href="assets/CV_WangYan.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View CV</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                    <a href="https://github.com/SophieWang777" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.93.43.37.81 1.1.81 2.22 0 1.6-.02 2.89-.02 3.29 0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-frame">
-                    <div class="image-placeholder">
-                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+const USER_CONFIG = {
+  name:       "Wang Yan",
+  initials:   "Sophie Wang",
+  role:       "Undergraduate",
+  university: "University of Electronic Science and Technology of China",
+  email:      "sophieeew777@gmail.com",
+  bio: "<p>I am a third-year undergraduate in Communication Engineering. (Glasgow × UESTC) .</p><p>My research interests lie at the intersection of machine learning and acoustic sensing. I'm particularly interested in AI for health, where lightweight sensing and on-device learning can extend care to people and places that clinical infrastructure does not easily reach.</p>",
+  photo:      "assets/profile.JPG",   // optional: path to your photo, e.g. "assets/photo.jpg"
 
-    <section id="news" class="section">
-        <div class="section-container">
-            <h2 class="section-title"><span class="title-icon">//</span> News</h2>
-            <div class="news-list" id="cfg-news"></div>
-        </div>
-    </section>
+/* 
+stats: [
+    { value: "10+",  label: "Publications" },
+    { value: "200+", label: "Citations" },
+    { value: "5+",   label: "Projects" },
+  ], 
+*/
 
-    <section id="internships" class="section section-alt">
-        <div class="section-container">
-            <h2 class="section-title"><span class="title-icon">//</span> Internships</h2>
-            <div class="exp-list" id="cfg-internships"></div>
-        </div>
-    </section>
+  links: {
+    scholar: "https://scholar.google.com/",
+    github:  "https://github.com/SophieWang777",
+    twitter: "",          // leave empty to hide
+    cv:      "assets/cv.pdf",
+  },
 
-    <section id="teaching" class="section">
-        <div class="section-container">
-            <h2 class="section-title"><span class="title-icon">//</span> Teaching</h2>
-            <div class="exp-list" id="cfg-teaching"></div>
-        </div>
-    </section>
 
-    <section id="education" class="section section-alt">
-        <div class="section-container">
-            <h2 class="section-title"><span class="title-icon">//</span> Education</h2>
-            <div class="exp-list" id="cfg-education"></div>
-        </div>
-    </section>
+  /* projects: [
+    {
+      name: "Project Name",
+      desc: "Brief description of your project and its impact.",
+      tags: ["Python", "PyTorch"],
+      url:  "#",
+    },
+  ], */
 
-    <section id="services" class="section">
-        <div class="section-container">
-            <h2 class="section-title"><span class="title-icon">//</span> Services</h2>
-            <div class="exp-list" id="cfg-services"></div>
-        </div>
-    </section>
+  news: [
+    { date: "2026.07", badge: "News",  text: "Selected as GTA (Glasgow Teaching Assistant) <br>2026 fall Introductory Programming (UESTC1005)" },
+    { date: "2026.04",    badge: "News",  text: "Selected as iSURE Intern, Center for Research Computing, University of Notre Dame" },
+    { date: "2025.09", badge: "News",  text: "Selected as GTA (Glasgow Teaching Assistant)  <br>2025 fall Introductory Programming (UESTC1005)" },
+    { date: "2025.06",    badge: "Award", text: "Excellence Award for Short-Term Academic Exchange, Glasgow College, UESTC" },
+    { date: "2024.10",    badge: "Award", text: "Outstanding Student Scholarship<br>Glasgow College, UESTC" },
+  ],
 
-    <!-- <section id="publications" class="section section-alt">
-        <div class="section-container">
-            <h2 class="section-title"><span class="title-icon">//</span> Publications</h2>
-            <div class="publications-list" id="cfg-publications"></div>
-        </div>
-    </section> -->
+  publications: [
+    {
+      year:     2025,
+      title:    "Your Paper Title Here",
+      authors:  "Your Name, Co-Author 1, Co-Author 2",
+      venue:    "Conference / Journal Name 2025",
+      links:    { pdf: "#", code: "#" },
+      abstract: "A brief summary of your paper's contributions and findings.",
+    },
+    {
+      year:     2024,
+      title:    "Another Paper Title",
+      authors:  "Your Name, Co-Author 1",
+      venue:    "Conference / Journal Name 2024",
+      links:    { pdf: "#" },
+      abstract: "",
+    },
+  ],  
+  
+  internships: [
+      {
+        period: "2026.07–present",
+        role: "Undergraduate Researcher, Voice4PIMD",
+        institution: "<a href=\"https://crc.nd.edu/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"exp-link\">CRC</a>, University of Notre Dame",
+        link: "https://voice4pimd.org/",
+        people: [
+          { label: "Faculty Advisor: Prof. Jarek Nabrzyski", url: "https://aegis.nd.edu/our-team/jaroslaw-nabrzyski/" },
+          { label: "Mentor: Evan Brinckman", url: "https://data-ai-computing.nd.edu/research/deployment-operations-modeling-and-engineering-dome/dome-people/" },
+        ],
+      },
+  ],
+  
+teaching: [
+    { period: "2025.09–2026.01", role: "UESTC1005 | Introductory Programming", institution: "Glasgow College, UESTC" },
+  ],
+  
+  education: [
+    { period: "2023.09–present", degree: "B.S. in Communication Engineering", institution: "Glasgow College, University of Glasgow | UESTC" },
+    { period: "2025.02",         degree: "Study Exchange",                    institution: "Department of Computer Science and Technology, Cambridge University" },
+  ],
 
-    <section id="contact" class="section">
-        <div class="section-container">
-            <h2 class="section-title"><span class="title-icon">//</span> Contact</h2>
-            <div class="contact-content">
-                <p>📬 Get In Touch！</p>
-                <p>I feel truly grateful for the support from my teachers and mentors, and I’m always excited to connect with people who share similar research passions. I’m eager to explore collaborative research projects and remote internship opportunities where I can contribute and learn.</p>
-                <p>📮 sophieeew777@gmail.com</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 | Sophie Wang :).</p>
-            <div class="visitor-stats">
-                <a href="https://info.flagcounter.com/2VXj"><img src="https://s01.flagcounter.com/map/2VXj/size_l/txt_000000/border_1E2F5E/pageviews_1/viewers_Wanderers/flags_0/" alt="Flag Counter" border="0"></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="config.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+  services: [
+    { period: "2023.09–2025.06", role: "Secretariat Minister",          institution: "Student Association Union, UESTC" },
+    { period: "2025.05.20",      role: "Event Service Volunteer",       institution: "2025 Meet Melbourne in China, Chengdu Stop (University of Melbourne)" },
+    { period: "2023.09–2024.06", role: "External Relations Department", institution: "Student Union, Glasgow College" },
+  ],
+  
+  };
