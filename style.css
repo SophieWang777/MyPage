@@ -788,6 +788,37 @@ a:hover {
     color: var(--accent-primary);
 }
 
+/* 右侧 👀 按钮（poster / view details 共用） */
+.side-btn {
+    position: absolute;
+    top: 44px;
+    right: var(--space-md);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 10px;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    border: 1px solid var(--accent-primary);
+    border-radius: 4px;
+    color: var(--accent-primary);
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.side-btn:hover {
+    background: var(--accent-primary);
+    color: white;
+    text-decoration: none;
+}
+
+/* Highlights 固定高度、可滚动，约显示 3 条 */
+#news .news-list {
+    max-height: 340px;
+    overflow-y: auto;
+}
+
 /* ========================================
    Experience - Timeline Items
    ======================================== */
