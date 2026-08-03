@@ -22,7 +22,7 @@ stats: [
 
   links: {
     scholar: "https://scholar.google.com/",
-    github:  "https://github.com/",
+    github:  "https://github.com/SophieWang777",
     twitter: "",          // leave empty to hide
     cv:      "assets/cv.pdf",
   },
@@ -93,9 +93,3 @@ teaching: [
   ],
   
   };
- 
-  
-  
-  
-
-  
