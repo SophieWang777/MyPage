@@ -10,7 +10,6 @@
 }
 
 :root {
-    /* Light Theme - Classic Print */
     --bg-primary: #fdfcfa;
     --bg-secondary: #f7f5f0;
     --bg-tertiary: #edeae3;
@@ -32,13 +31,11 @@
     --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.08);
 
-    /* Typography - Serif for Authority */
     --font-display: 'Playfair Display', 'Georgia', serif;
     --font-body: 'Source Serif 4', 'Georgia', serif;
     --font-mono: 'IBM Plex Mono', monospace;
     --font-sans: 'Source Sans 3', sans-serif;
 
-    /* Generous Spacing */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
@@ -62,7 +59,6 @@
 ::selection { background: var(--accent-primary); color: #fff; }
 
 
-/* Dark Theme - Evening Reading */
 [data-theme="dark"] {
     --bg-primary: #1c1b19;
     --bg-secondary: #252420;
@@ -380,12 +376,18 @@ a:hover {
     color: var(--bg-primary);
 }
 
+.hero-social {
+    display: flex;
+    gap: var(--space-sm);
+    margin-left: var(--space-lg);
+}
+
 .btn-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     border: 1px solid var(--text-primary);
     color: var(--text-primary);
@@ -1065,7 +1067,6 @@ a:hover {
     }
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -1100,7 +1101,6 @@ a:hover {
     display: none;
 }
 
-/* Scroll Down Arrow */
 .scroll-arrow {
     position: absolute;
     bottom: 40px;
@@ -1140,81 +1140,40 @@ a:hover {
    Editorial Magazine Animations
    ======================================== */
 
-/* Elegant fade in from bottom */
 @keyframes editorialFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Typewriter cursor blink */
 @keyframes cursorBlink {
     0%, 50% { border-color: var(--accent-primary); }
     51%, 100% { border-color: transparent; }
 }
 
-/* Line draw from left */
 @keyframes lineDrawLeft {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
-/* Line draw from center */
 @keyframes lineDrawCenter {
-    from {
-        transform: scaleX(0);
-    }
-    to {
-        transform: scaleX(1);
-    }
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
 }
 
-/* Elegant scale reveal */
 @keyframes scaleReveal {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-/* Slide in from left */
 @keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-/* Slide in from right */
 @keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
 }
-
-/* Apply animations to Hero elements */
 
 .hero-greeting {
     animation: slideInLeft 0.6s ease-out forwards;
@@ -1258,7 +1217,6 @@ a:hover {
     opacity: 0;
 }
 
-/* Image frame elegant border animation */
 .image-frame {
     position: relative;
     transition: all 0.4s ease;
@@ -1278,7 +1236,6 @@ a:hover {
     inset: -12px;
 }
 
-/* Section title underline animation */
 .section-title {
     position: relative;
     overflow: hidden;
@@ -1300,7 +1257,6 @@ a:hover {
     width: 120px;
 }
 
-/* Publication card hover effects */
 .pub-card {
     transition: all 0.3s ease;
     position: relative;
@@ -1325,7 +1281,6 @@ a:hover {
     width: 3px;
 }
 
-/* Project card hover */
 .project-card {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1336,7 +1291,6 @@ a:hover {
     border-color: var(--accent-primary);
 }
 
-/* News item hover */
 .news-item {
     transition: all 0.3s ease;
 }
@@ -1345,7 +1299,6 @@ a:hover {
     background: var(--bg-secondary);
 }
 
-/* Button elegant hover */
 .btn-primary {
     position: relative;
     overflow: hidden;
@@ -1359,12 +1312,7 @@ a:hover {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
 }
 
@@ -1377,7 +1325,6 @@ a:hover {
     box-shadow: 0 4px 12px rgba(30, 58, 95, 0.3);
 }
 
-/* Contact item hover */
 .contact-item {
     transition: all 0.3s ease;
     position: relative;
@@ -1388,7 +1335,6 @@ a:hover {
     box-shadow: var(--shadow-md);
 }
 
-/* Tag hover effect */
 .tag {
     transition: all 0.2s ease;
 }
@@ -1398,7 +1344,6 @@ a:hover {
     color: white;
 }
 
-/* Publication link hover */
 .pub-link {
     transition: all 0.2s ease;
 }
@@ -1407,7 +1352,6 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* Experience item hover */
 .exp-item {
     transition: all 0.3s ease;
 }
