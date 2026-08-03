@@ -885,7 +885,6 @@ a:hover {
 #internships .exp-item,
 #education .exp-item,
 #teaching .exp-item {
-    width: 700px;
     max-width: 100%;
     margin: 0 auto var(--space-lg) auto;
     border: 1px solid var(--border-color);
@@ -1021,22 +1020,18 @@ a:hover {
     }
 
 
-    .news-item,
-    .exp-item {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .item-spacer {
-        display: none;
-    }
-
-    .item-meta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;      /* 原来是 center */
-    gap: 6px;
-    padding-right: var(--space-md);
+   .exp-item,
+   .news-item {
+       align-items: start;
+   }
+   
+   .item-meta {
+       display: flex;
+       flex-direction: column;
+       align-items: flex-end;
+       gap: 6px;
+       padding-right: var(--space-md);
+       padding-top: 0.15em;     /* 微调，让日期基线对上标题 */
    }
 }
 
