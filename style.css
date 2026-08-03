@@ -1,7 +1,5 @@
 /* ========================================
    Style: Editorial / Magazine
-   Design Philosophy: Academic authority,
-   like Nature/Science journal typography
    ======================================== */
 
 .exp-list {
@@ -52,7 +50,6 @@
     --radius-lg: 4px;
     --radius-xl: 6px;
 }
-/* ---- Global Resets ---- */
 * { -webkit-tap-highlight-color: transparent; }
 [data-theme="dark"] { color-scheme: dark; }
 [data-theme="light"] { color-scheme: light; }
@@ -75,10 +72,6 @@
     --accent-primary: #5b8dd6;
     --accent-secondary: #7ba3e0;
 }
-
-/* ========================================
-   Reset & Base
-   ======================================== */
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -109,10 +102,6 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
-/* ========================================
-   Navigation - Classic Top Bar
-   ======================================== */
 
 .navbar {
     position: fixed;
@@ -235,10 +224,6 @@ a:hover {
 .theme-label::after {
     display: none;
 }
-
-/* ========================================
-   Hero - Magazine Cover Layout
-   ======================================== */
 
 .hero {
     min-height: auto;
@@ -432,10 +417,6 @@ a:hover {
     opacity: 0.5;
 }
 
-/* ========================================
-   Sections Base
-   ======================================== */
-
 .section {
     padding: 48px var(--space-xl);
 }
@@ -470,9 +451,16 @@ a:hover {
     font-size: 0;
 }
 
-/* ========================================
-   Publications - Journal Style
-   ======================================== */
+.scroll-hint {
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.55;
+    letter-spacing: 0.05em;
+    margin-top: -2.5rem;
+    margin-bottom: var(--space-lg);
+}
 
 .publications-filter {
     display: flex;
@@ -583,10 +571,6 @@ a:hover {
     text-decoration: none;
 }
 
-/* ========================================
-   Projects - Column Layout
-   ======================================== */
-
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -671,6 +655,8 @@ a:hover {
     background: var(--bg-card);
     box-shadow: var(--shadow-sm);
     padding: var(--space-sm) var(--space-lg);
+    max-height: 340px;
+    overflow-y: auto;
 }
 
 .news-timeline {
@@ -682,7 +668,7 @@ a:hover {
 .news-item {
     position: relative;
     text-align: center;
-    padding: var(--space-md) 140px;
+    padding: var(--space-md) 110px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -693,7 +679,7 @@ a:hover {
 .news-date {
     position: absolute;
     top: var(--space-md);
-    right: var(--space-md);
+    right: var(--space-lg);
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -745,29 +731,6 @@ a:hover {
     text-decoration-color: var(--accent-primary);
 }
 
-.news-tag-side {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    margin-left: 12px;
-    padding: 6px 10px;
-    font-family: var(--font-sans);
-    font-size: 0.7rem;
-    border: 1px solid var(--accent-primary);
-    border-radius: 4px;
-    color: var(--accent-primary);
-    vertical-align: middle;
-    white-space: nowrap;
-    transition: all var(--transition-fast);
-}
-
-.news-tag-side:hover {
-    background: var(--accent-primary);
-    color: white;
-    text-decoration: none;
-}
-
 .news-people {
     flex-basis: 100%;
     display: flex;
@@ -788,35 +751,35 @@ a:hover {
     color: var(--accent-primary);
 }
 
-/* 右侧 👀 按钮（poster / view details 共用） */
+/* 右侧 👀 按钮（poster / view details 共用）——无边框、眼睛大、文字小、右对齐 */
 .side-btn {
     position: absolute;
-    top: 44px;
-    right: var(--space-md);
+    top: 38px;
+    right: var(--space-lg);
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
-    padding: 6px 10px;
-    font-family: var(--font-sans);
-    font-size: 0.7rem;
-    border: 1px solid var(--accent-primary);
-    border-radius: 4px;
+    gap: 0;
     color: var(--accent-primary);
     white-space: nowrap;
     transition: all var(--transition-fast);
+    line-height: 1.1;
+}
+
+.side-btn span:first-child {
+    font-size: 1.5rem;
+}
+
+.side-btn span:last-child {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    letter-spacing: 0.03em;
 }
 
 .side-btn:hover {
-    background: var(--accent-primary);
-    color: white;
+    color: var(--accent-secondary);
     text-decoration: none;
-}
-
-/* Highlights 固定高度、可滚动，约显示 3 条 */
-#news .news-list {
-    max-height: 340px;
-    overflow-y: auto;
+    transform: scale(1.08);
 }
 
 /* ========================================
@@ -842,7 +805,7 @@ a:hover {
 .exp-item {
     position: relative;
     text-align: center;
-    padding: var(--space-md) 140px;
+    padding: var(--space-md) 110px;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -853,7 +816,7 @@ a:hover {
 .exp-period {
     position: absolute;
     top: var(--space-md);
-    right: var(--space-md);
+    right: var(--space-lg);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-muted);
@@ -914,7 +877,6 @@ a:hover {
     color: var(--text-secondary);
 }
 
-/* ---- Internships / Education / Teaching: individual small cards, narrower & centered ---- */
 #internships .exp-item,
 #education .exp-item,
 #teaching .exp-item {
@@ -933,7 +895,6 @@ a:hover {
     margin-bottom: 0;
 }
 
-/* ---- Services: one unified big card ---- */
 #services .exp-list {
     max-width: 700px;
     margin: 0 auto;
@@ -943,10 +904,6 @@ a:hover {
     box-shadow: var(--shadow-sm);
     padding: var(--space-sm) var(--space-lg);
 }
-
-/* ========================================
-   Contact
-   ======================================== */
 
 .contact-content {
     text-align: center;
@@ -1000,10 +957,6 @@ a:hover {
     height: 16px;
 }
 
-/* ========================================
-   Footer
-   ======================================== */
-
 .footer {
     padding: var(--space-lg) var(--space-xl);
     border-top: 1px solid var(--border-color);
@@ -1032,10 +985,6 @@ a:hover {
 .stat-divider {
     color: var(--border-color);
 }
-
-/* ========================================
-   Responsive Design
-   ======================================== */
 
 @media (max-width: 1024px) {
     .hero-content {
@@ -1119,6 +1068,14 @@ a:hover {
         text-align: center;
         margin-bottom: var(--space-xs);
     }
+
+    .side-btn {
+        position: static;
+        flex-direction: row;
+        gap: var(--space-xs);
+        justify-content: center;
+        margin-top: var(--space-sm);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1127,10 +1084,6 @@ a:hover {
         transition-duration: 0.01ms !important;
     }
 }
-
-/* ========================================
-   Hide SPA-specific elements
-   ======================================== */
 
 .spa-layout {
     display: block;
@@ -1189,10 +1142,6 @@ a:hover {
     40% { transform: translateX(-50%) translateY(-10px); }
     60% { transform: translateX(-50%) translateY(-5px); }
 }
-
-/* ========================================
-   Editorial Magazine Animations
-   ======================================== */
 
 @keyframes editorialFadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -1414,10 +1363,6 @@ a:hover {
     background: var(--bg-secondary);
 }
 
-/* ========================================
-   Scroll-Triggered Animations
-   ======================================== */
-
 .scroll-animate {
     opacity: 0;
     transform: translateY(20px);
@@ -1514,10 +1459,6 @@ a:hover {
     transform: translateY(0);
 }
 
-/* ========================================
-   Navbar Scroll Effect
-   ======================================== */
-
 .navbar.scrolled {
     background: var(--bg-primary);
     box-shadow: var(--shadow-md);
@@ -1531,10 +1472,6 @@ a:hover {
     font-size: 1.1rem;
 }
 
-/* ========================================
-   Theme Transition Animation
-   ======================================== */
-
 .theme-transitioning,
 .theme-transitioning *,
 .theme-transitioning *::before,
@@ -1544,10 +1481,6 @@ a:hover {
                 border-color 0.5s ease,
                 box-shadow 0.5s ease !important;
 }
-
-/* ========================================
-   Back to Top Button
-   ======================================== */
 
 .back-to-top {
     position: fixed;
@@ -1588,9 +1521,7 @@ a:hover {
     box-shadow: var(--shadow-md);
 }
 
-/* ---- Focus Styles ---- */
 :focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 3px; border-radius: 2px; }
 
-/* ---- Skip Link ---- */
 .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-primary); color: #fff; padding: 8px 16px; z-index: 9999; font-size: 0.875rem; transition: top 0.2s; }
 .skip-link:focus { top: 0; }
