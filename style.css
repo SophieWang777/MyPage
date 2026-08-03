@@ -1019,8 +1019,9 @@ a:hover {
     .experience-grid {
         grid-template-columns: 1fr;
     }
-}
-.news-item,
+
+
+    .news-item,
     .exp-item {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1036,6 +1037,7 @@ a:hover {
         gap: var(--space-md);
         margin-top: var(--space-sm);
     }
+}
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
