@@ -49,6 +49,9 @@
     --radius-md: 2px;
     --radius-lg: 4px;
     --radius-xl: 6px;
+
+    /* Shared width for the card lists, so every section lines up */
+    --card-width: 700px;
 }
 * { -webkit-tap-highlight-color: transparent; }
 [data-theme="dark"] { color-scheme: dark; }
@@ -91,6 +94,9 @@ body {
     line-height: 1.8;
     font-size: 17px;
     transition: background-color var(--transition-base), color var(--transition-base);
+    /* Nothing on this page is meant to scroll sideways. Without this a single
+       over-wide element shifts every centred section off to the left. */
+    overflow-x: hidden;
 }
 
 a {
@@ -648,7 +654,8 @@ a:hover {
    ======================================== */
 
 #news .news-list {
-    max-width: 700px;
+    width: var(--card-width);
+    max-width: 100%;
     margin: 0 auto;
     border: 1px solid var(--border-color);
     border-radius: 4px;
@@ -681,12 +688,16 @@ a:hover {
     /* 左侧占位，与右侧 meta 同宽，保证中间内容真正居中 */
 }
 
+/* Date and the 👀 link, pinned to the top right of the card.
+   align-items: flex-end puts every date's right edge on the same
+   vertical line, whatever its length. */
 .item-meta {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     gap: 6px;
     padding-top: 2px;
+    padding-right: var(--space-md);
 }
 
 .item-date {
@@ -808,12 +819,13 @@ a:hover {
     color: var(--accent-primary);
     margin-bottom: var(--space-lg);
     padding-bottom: var(--space-sm);
-    border-bottom: 2px solid var(--accent-primary);
+    border-bottom: 2px solid var(--border-color);
 }
+
 .exp-item {
     display: grid;
     grid-template-columns: 130px 1fr 130px;
-    align-items: center;
+    align-items: start;
     padding: var(--space-md) 0;
     border-bottom: 1px solid var(--border-color);
 }
@@ -882,9 +894,13 @@ a:hover {
     color: var(--text-secondary);
 }
 
+/* Every card in these three sections is one fixed width, so the left and
+   right edges line up down the whole page. The width sits on the rule that
+   matches all cards, not on :last-child, or only the final card gets it. */
 #internships .exp-item,
 #education .exp-item,
 #teaching .exp-item {
+    width: var(--card-width);
     max-width: 100%;
     margin: 0 auto var(--space-lg) auto;
     border: 1px solid var(--border-color);
@@ -896,12 +912,12 @@ a:hover {
 #internships .exp-item:last-child,
 #education .exp-item:last-child,
 #teaching .exp-item:last-child {
-    width: 700px;     
     margin-bottom: 0;
 }
 
 #services .exp-list {
-    max-width: 700px;
+    width: var(--card-width);
+    max-width: 100%;
     margin: 0 auto;
     border: 1px solid var(--border-color);
     border-radius: 4px;
@@ -1019,21 +1035,30 @@ a:hover {
     .experience-grid {
         grid-template-columns: 1fr;
     }
+}
 
+/* Narrow screens only. Three columns will not fit, so the card stacks and
+   the meta block moves under the text as a single row. These rules must
+   stay inside the query, or they override the desktop layout as well. */
+@media (max-width: 700px) {
+    .news-item,
+    .exp-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-   .exp-item,
-   .news-item {
-       align-items: start;
-   }
-   
-   .item-meta {
-       display: flex;
-       flex-direction: column;
-       align-items: flex-end;
-       gap: 6px;
-       padding-top: 2px;
-       padding-right: var(--space-md);
-   }
+    .item-spacer {
+        display: none;
+    }
+
+    .item-meta {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-md);
+        margin-top: var(--space-sm);
+        padding-right: 0;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1483,7 +1508,3 @@ a:hover {
 
 .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-primary); color: #fff; padding: 8px 16px; z-index: 9999; font-size: 0.875rem; transition: top 0.2s; }
 .skip-link:focus { top: 0; }
-
-body {
-    overflow-x: hidden;
-}
