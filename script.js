@@ -60,21 +60,23 @@ function boldName(authors, name) {
   return authors.replace(name, `<strong>${name}</strong>`);
 }
 
-function sideLinkHTML(sidelink) {
-  if (!sidelink) return '';
-  return `<a href="${sidelink.url}" target="_blank" rel="noopener noreferrer" class="side-btn"><span>👀</span><span>${sidelink.label}</span></a>`;
+function sideMeta(dateOrPeriod, sidelink) {
+  const btn = sidelink
+    ? `<a href="${sidelink.url}" target="_blank" rel="noopener noreferrer" class="side-btn"><span class="side-eyes">👀</span><span class="side-label">${sidelink.label}</span></a>`
+    : '';
+  return `<div class="item-meta"><span class="item-date">${dateOrPeriod}</span>${btn}</div>`;
 }
 
 function renderTimeline(items, mainField, subField) {
   return items.map(e => `
     <div class="exp-item">
-      <div class="exp-period">${e.period}</div>
-      ${sideLinkHTML(e.sidelink)}
+      <div class="item-spacer"></div>
       <div class="exp-details">
         <h4>${e.link ? `<a href="${e.link}" target="_blank" rel="noopener noreferrer" class="exp-link">${e[mainField]}</a>` : e[mainField]}</h4>
         <p>${e.institutionLink ? `<a href="${e.institutionLink}" target="_blank" rel="noopener noreferrer" class="exp-link">${e[subField]}</a>` : e[subField]}</p>
         ${e.people?.length ? `<div class="exp-people">${e.people.map(p => `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="exp-people-link">${p.label}</a>`).join(' | ')}</div>` : ''}
       </div>
+      ${sideMeta(e.period, e.sidelink)}
     </div>`).join('');
 }
 
@@ -99,12 +101,12 @@ function populateLists(cfg) {
   if (newsList && cfg.news?.length) {
     newsList.innerHTML = cfg.news.map(n => `
       <div class="news-item">
-        <span class="news-date">${n.date}</span>
-        ${sideLinkHTML(n.sidelink)}
+        <div class="item-spacer"></div>
         <div class="news-content">
           <span class="news-badge" data-type="${n.badge.toLowerCase()}">${n.badge}</span>
           <div class="news-text">${n.text}</div>
         </div>
+        ${sideMeta(n.date, n.sidelink)}
       </div>`).join('');
   }
 
