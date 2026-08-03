@@ -65,13 +65,13 @@ news: [
   ],
 
   education: [
-    { period: "2023.09–present", degree: "B.S. in Communication Engineering", institution: "Glasgow College, University of Glasgow | UESTC" },
-    { period: "2025.02",         degree: "Study Exchange",                    institution: "Department of Computer Science and Technology, Cambridge University" },
+    { period: "2023.09–present", degree: "B.S. in Communication Engineering", institution: "Glasgow College,<br>University of Glasgow | UESTC" },
+    { period: "2025.02",         degree: "Study Exchange",                    institution: "Department of Computer Science and Technology,<br>Cambridge University" },
   ],
 
   services: [
     { period: "2023.09–2025.06", role: "Secretariat Minister",          institution: "Student Association Union, UESTC" },
-    { period: "2025.05.20",      role: "Event Service Volunteer",       institution: "2025 Meet Melbourne in China, Chengdu Stop (University of Melbourne)" },
+    { period: "2025.05.20",      role: "Event Service Volunteer",       institution: "2025 Meet Melbourne in China, Chengdu Stop<br>(University of Melbourne)" },
     { period: "2023.09–2024.06", role: "External Relations Department", institution: "Student Union, Glasgow College" },
   ],
 
