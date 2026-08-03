@@ -666,9 +666,10 @@ a:hover {
 }
 
 .news-item {
-    position: relative;
-    text-align: center;
-    padding: var(--space-md) 110px;
+    display: grid;
+    grid-template-columns: 130px 1fr 130px;
+    align-items: start;
+    padding: var(--space-md) 0;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -676,22 +677,33 @@ a:hover {
     border-bottom: none;
 }
 
-.news-date {
-    position: absolute;
-    top: var(--space-md);
-    right: var(--space-lg);
+.item-spacer {
+    /* 左侧占位，与右侧 meta 同宽，保证中间内容真正居中 */
+}
+
+.item-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding-top: 2px;
+}
+
+.item-date {
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--text-muted);
+    white-space: nowrap;
 }
 
 .news-content {
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: var(--space-sm);
-    flex-wrap: wrap;
+    text-align: center;
+    padding: 0 var(--space-md);
 }
 
 .news-badge {
@@ -753,24 +765,21 @@ a:hover {
 
 /* 右侧 👀 按钮（poster / view details 共用）——无边框、眼睛大、文字小、右对齐 */
 .side-btn {
-    position: absolute;
-    top: 38px;
-    right: var(--space-lg);
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     gap: 0;
     color: var(--accent-primary);
     white-space: nowrap;
-    transition: all var(--transition-fast);
     line-height: 1.1;
+    transition: all var(--transition-fast);
 }
 
-.side-btn span:first-child {
-    font-size: 1.5rem;
+.side-eyes {
+    font-size: 1.1rem;
 }
 
-.side-btn span:last-child {
+.side-label {
     font-family: var(--font-sans);
     font-size: 0.6rem;
     letter-spacing: 0.03em;
@@ -801,25 +810,16 @@ a:hover {
     padding-bottom: var(--space-sm);
     border-bottom: 2px solid var(--accent-primary);
 }
-
 .exp-item {
-    position: relative;
-    text-align: center;
-    padding: var(--space-md) 110px;
+    display: grid;
+    grid-template-columns: 130px 1fr 130px;
+    align-items: start;
+    padding: var(--space-md) 0;
     border-bottom: 1px solid var(--border-color);
 }
 
 .exp-item:last-child {
     border-bottom: none;
-}
-
-.exp-period {
-    position: absolute;
-    top: var(--space-md);
-    right: var(--space-lg);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-muted);
 }
 
 .exp-title {
@@ -870,6 +870,11 @@ a:hover {
 
 .exp-people-link:hover {
     color: var(--accent-primary);
+}
+
+.exp-details {
+    text-align: center;
+    padding: 0 var(--space-md);
 }
 
 .exp-details p {
@@ -1015,68 +1020,22 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+.news-item,
+    .exp-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-@media (max-width: 768px) {
-    .nav-links {
+    .item-spacer {
         display: none;
     }
 
-    .hero {
-        padding: 100px var(--space-md) var(--space-2xl);
-    }
-
-    .hero-name {
-        font-size: 2rem;
-    }
-
-    .image-frame {
-        width: 180px;
-        height: 220px;
-    }
-
-    .hero-stats {
-        flex-direction: column;
-        gap: var(--space-md);
-    }
-
-    .section {
-        padding: var(--space-2xl) var(--space-md);
-    }
-
-    .pub-card {
-        grid-template-columns: 1fr;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .exp-item,
-    .news-item {
-        padding: var(--space-md) var(--space-sm);
-    }
-
-    .exp-period,
-    .news-date {
-        position: static;
-        display: block;
-        text-align: center;
-        margin-bottom: var(--space-xs);
-    }
-
-    .side-btn {
-        position: static;
+    .item-meta {
         flex-direction: row;
-        gap: var(--space-xs);
         justify-content: center;
+        gap: var(--space-md);
         margin-top: var(--space-sm);
     }
-}
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
