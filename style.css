@@ -1031,8 +1031,8 @@ a:hover {
        flex-direction: column;
        align-items: flex-end;
        gap: 6px;
+       padding-top: 2px;
        padding-right: var(--space-md);
-       padding-top: 0.15em;     /* 微调，让日期基线对上标题 */
    }
 }
 
@@ -1483,3 +1483,7 @@ a:hover {
 
 .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent-primary); color: #fff; padding: 8px 16px; z-index: 9999; font-size: 0.875rem; transition: top 0.2s; }
 .skip-link:focus { top: 0; }
+
+body {
+    overflow-x: hidden;
+}
