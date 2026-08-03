@@ -896,6 +896,7 @@ a:hover {
 #internships .exp-item:last-child,
 #education .exp-item:last-child,
 #teaching .exp-item:last-child {
+    width: 700px;     
     margin-bottom: 0;
 }
 
