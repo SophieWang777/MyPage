@@ -38,9 +38,7 @@ stats: [
   ], */
 
   news: [
-    { date: "2026.07", badge: "News", text: "Presented my <a href=\"assets/poster_Sophie.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"news-link\">poster</a> at the 2026 Summer Undergraduate Research Symposium, University of Notre Dame" },
-    { date: "2026.07", badge: "News",  text: "Selected as GTA (Glasgow Teaching Assistant) <br>2026 fall Introductory Programming (UESTC1005)" },
-    { date: "2026.04",    badge: "News",  text: "Selected as iSURE Intern, Center for Research Computing, University of Notre Dame" },
+    { date: "2026.07", badge: "News", text: "Presented my poster at the 2026 Summer Undergraduate Research Symposium, University of Notre Dame <a href=\"assets/poster_Sophie.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"news-tag\">👀 View Poster</a>" },
     { date: "2025.09", badge: "News",  text: "Selected as GTA (Glasgow Teaching Assistant)  <br>2025 fall Introductory Programming (UESTC1005)" },
     { date: "2025.06",    badge: "Award", text: "Excellence Award for Short-Term Academic Exchange, Glasgow College, UESTC" },
     { date: "2024.10",    badge: "Award", text: "Outstanding Student Scholarship<br>Glasgow College, UESTC" },
