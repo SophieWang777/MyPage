@@ -60,13 +60,19 @@ function boldName(authors, name) {
   return authors.replace(name, `<strong>${name}</strong>`);
 }
 
+function sideLinkHTML(sidelink) {
+  if (!sidelink) return '';
+  return `<a href="${sidelink.url}" target="_blank" rel="noopener noreferrer" class="side-btn"><span>👀</span><span>${sidelink.label}</span></a>`;
+}
+
 function renderTimeline(items, mainField, subField) {
   return items.map(e => `
     <div class="exp-item">
       <div class="exp-period">${e.period}</div>
+      ${sideLinkHTML(e.sidelink)}
       <div class="exp-details">
         <h4>${e.link ? `<a href="${e.link}" target="_blank" rel="noopener noreferrer" class="exp-link">${e[mainField]}</a>` : e[mainField]}</h4>
-        <p>${e[subField]}</p>
+        <p>${e.institutionLink ? `<a href="${e.institutionLink}" target="_blank" rel="noopener noreferrer" class="exp-link">${e[subField]}</a>` : e[subField]}</p>
         ${e.people?.length ? `<div class="exp-people">${e.people.map(p => `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="exp-people-link">${p.label}</a>`).join(' | ')}</div>` : ''}
       </div>
     </div>`).join('');
@@ -89,17 +95,18 @@ function populateLists(cfg) {
       </article>`).join('');
   }
 
-const newsList = document.getElementById('cfg-news');
-if (newsList && cfg.news?.length) {
+  const newsList = document.getElementById('cfg-news');
+  if (newsList && cfg.news?.length) {
     newsList.innerHTML = cfg.news.map(n => `
       <div class="news-item">
         <span class="news-date">${n.date}</span>
+        ${sideLinkHTML(n.sidelink)}
         <div class="news-content">
           <span class="news-badge" data-type="${n.badge.toLowerCase()}">${n.badge}</span>
           <div class="news-text">${n.text}</div>
         </div>
       </div>`).join('');
-}
+  }
 
   const internshipsList = document.getElementById('cfg-internships');
   if (internshipsList && cfg.internships?.length) {
