@@ -55,7 +55,7 @@ news: [
         sidelink: { url: "https://sophiewang777.github.io/Voice4PIMD/", label: "View Details" },
         people: [
           { label: "Faculty Advisor: Prof. Jarek Nabrzyski", url: "https://aegis.nd.edu/our-team/jaroslaw-nabrzyski/" },
-          { label: "Mentor: Evan Brinckman", url: "https://data-ai-computing.nd.edu/research/deployment-operations-modeling-and-engineering-dome/dome-people/" },
+          { label: "Mentor: Evan Brinckman", url: "https://data-ai-computing.nd.edu/units/deployment-operations-modeling-and-engineering-dome/dome-people/" },
         ],
       },
   ],
