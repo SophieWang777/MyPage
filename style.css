@@ -1575,3 +1575,35 @@ a:hover {
 #contact .contact-links {
     justify-content: center;
 }
+@media (min-width: 900px) {
+    #internships .item-spacer,
+    #education .item-spacer,
+    #teaching .item-spacer {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #internships .exp-details,
+    #education .exp-details,
+    #teaching .exp-details {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        padding-inline: 140px;
+        text-align: center;
+    }
+
+    #internships .item-meta,
+    #education .item-meta,
+    #teaching .item-meta {
+        grid-column: 3;
+        grid-row: 1;
+        position: relative;
+        z-index: 2;
+    }
+
+    #internships .exp-title,
+    #education .exp-title,
+    #teaching .exp-title {
+        white-space: nowrap;
+    }
+}
