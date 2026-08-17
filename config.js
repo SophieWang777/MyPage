@@ -19,6 +19,8 @@ const USER_CONFIG = {
   },
 
 news: [
+    { date: "2026.08", badge: "News",  text: "Selected as GTA (Glasgow Teaching Assistant),<br>2026 fall Digital Circuits Design (UESTC3020)" },
+    { date: "2026.04", badge: "News",  text: "Selected as iSURE Intern,<br>Center for Research Computing,University of Notre Dame" },
     { date: "2026.07", badge: "News",  text: "Presented my poster at the 2026 Summer Undergraduate Research Symposium,<br>University of Notre Dame", sidelink: { url: "assets/poster_Sophie.pdf", label: "View Poster" } },
     { date: "2026.07", badge: "News",  text: "Selected as GTA (Glasgow Teaching Assistant),<br>2026 fall Introductory Programming (UESTC1005)" },
     { date: "2026.04", badge: "News",  text: "Selected as iSURE Intern,<br>Center for Research Computing,University of Notre Dame" },
