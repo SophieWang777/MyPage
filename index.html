@@ -152,7 +152,7 @@
         </div>
     </footer>
 
-       <!-- ===== Beyond Research Modal ===== -->
+    <!-- ===== Beyond Research Modal ===== -->
     <div class="beyond-overlay" id="beyondOverlay" role="dialog" aria-modal="true" aria-labelledby="beyondQuote">
         <div class="beyond-card">
             <button class="beyond-close" id="beyondClose" aria-label="Close">&times;</button>
@@ -202,3 +202,36 @@
             </div>
         </div>
     </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script>
+    (function () {
+        var overlay = document.getElementById('beyondOverlay');
+        var openBtn = document.getElementById('beyondBtn');
+        var closeBtn = document.getElementById('beyondClose');
+        if (!overlay || !openBtn || !closeBtn) return;
+
+        function openModal(e) {
+            e.preventDefault();
+            overlay.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            overlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+
+        openBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) closeModal();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+        });
+    })();
+    </script>
+</body>
+</html>
