@@ -1607,7 +1607,6 @@ a:hover {
         white-space: nowrap;
     }
 }
-
 /* ===== Beyond Research Modal ===== */
 .beyond-overlay {
     position: fixed;
@@ -1635,7 +1634,7 @@ a:hover {
     aspect-ratio: 7 / 5;
     display: flex;
     flex-direction: column;
-    padding: 52px 56px 48px;
+    padding: 44px 48px 40px;
     background: var(--bg-primary, #fdfcf7);
     border: 1px solid rgba(30, 58, 95, 0.14);
     box-shadow: 0 26px 64px rgba(20, 28, 46, 0.3);
@@ -1670,12 +1669,12 @@ a:hover {
 }
 
 .beyond-quote {
-    margin: 0 auto;
-    max-width: 24ch;
+    margin: 0;
     font-family: Georgia, "Times New Roman", serif;
     font-style: italic;
-    font-size: clamp(1.15rem, 2.1vw, 1.6rem);
-    line-height: 1.45;
+    font-size: clamp(1rem, 2.1vw, 1.55rem);
+    line-height: 1.4;
+    white-space: nowrap;
     color: var(--text-primary, #1e3a5f);
 }
 
@@ -1683,15 +1682,16 @@ a:hover {
     display: block;
     width: 48px;
     height: 2px;
-    margin: 20px auto 0;
+    margin: 18px auto 0;
     background: #c8a45c;
 }
 
 .beyond-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin: auto 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    width: min(100%, 470px);
+    margin: auto;
 }
 
 .beyond-item {
@@ -1700,7 +1700,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 11px;
     border: 1px solid rgba(30, 58, 95, 0.15);
     color: var(--text-primary, #1e3a5f);
     transition: all 0.22s ease;
@@ -1727,11 +1727,25 @@ a:hover {
 @media (max-width: 720px) {
     .beyond-card {
         aspect-ratio: auto;
-        padding: 44px 24px 32px;
-        gap: 32px;
+        padding: 40px 20px 28px;
+    }
+    .beyond-quote {
+        font-size: min(1.05rem, 4.2vw);
     }
     .beyond-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        width: 100%;
+        gap: 10px;
+        margin: 28px 0 0;
+    }
+    .beyond-item {
+        gap: 8px;
+    }
+    .beyond-item svg {
+        width: 22px;
+        height: 22px;
+    }
+    .beyond-item span {
+        font-size: 0.6rem;
+        letter-spacing: 0.06em;
     }
 }
