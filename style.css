@@ -1607,3 +1607,131 @@ a:hover {
         white-space: nowrap;
     }
 }
+
+/* ===== Beyond Research Modal ===== */
+.beyond-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(20, 28, 46, 0.55);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.beyond-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.beyond-card {
+    position: relative;
+    width: min(880px, 100%);
+    aspect-ratio: 7 / 5;
+    display: flex;
+    flex-direction: column;
+    padding: 52px 56px 48px;
+    background: var(--bg-primary, #fdfcf7);
+    border: 1px solid rgba(30, 58, 95, 0.14);
+    box-shadow: 0 26px 64px rgba(20, 28, 46, 0.3);
+    overflow-y: auto;
+    transform: translateY(16px) scale(0.985);
+    transition: transform 0.28s ease;
+}
+
+.beyond-overlay.is-open .beyond-card {
+    transform: none;
+}
+
+.beyond-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    line-height: 1;
+    color: rgba(30, 58, 95, 0.4);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.beyond-close:hover {
+    color: var(--text-primary, #1e3a5f);
+}
+
+.beyond-head {
+    text-align: center;
+}
+
+.beyond-quote {
+    margin: 0 auto;
+    max-width: 24ch;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: clamp(1.15rem, 2.1vw, 1.6rem);
+    line-height: 1.45;
+    color: var(--text-primary, #1e3a5f);
+}
+
+.beyond-rule {
+    display: block;
+    width: 48px;
+    height: 2px;
+    margin: 20px auto 0;
+    background: #c8a45c;
+}
+
+.beyond-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: auto 0;
+}
+
+.beyond-item {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid rgba(30, 58, 95, 0.15);
+    color: var(--text-primary, #1e3a5f);
+    transition: all 0.22s ease;
+}
+
+.beyond-item svg {
+    width: 26px;
+    height: 26px;
+}
+
+.beyond-item span {
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.beyond-item:hover {
+    background: var(--text-primary, #1e3a5f);
+    border-color: var(--text-primary, #1e3a5f);
+    color: var(--bg-primary, #fdfcf7);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 720px) {
+    .beyond-card {
+        aspect-ratio: auto;
+        padding: 44px 24px 32px;
+        gap: 32px;
+    }
+    .beyond-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
