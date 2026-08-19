@@ -130,3 +130,31 @@ function populateLists(cfg) {
     servicesList.innerHTML = renderTimeline(cfg.services, 'role', 'institution');
   }
 }
+
+/* ===== Beyond Research Modal ===== */
+(function () {
+    const overlay = document.getElementById('beyondOverlay');
+    const openBtn = document.getElementById('beyondBtn');
+    const closeBtn = document.getElementById('beyondClose');
+    if (!overlay || !openBtn) return;
+
+    function openModal(e) {
+        e.preventDefault();
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+    });
+})();
